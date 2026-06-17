@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="100%" height="100%" style="background-color: #1a1a24; font-family: system-ui, -apple-system, sans-serif;">
+  <!-- Grid Background (Subtle) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2d2d3d" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e676" />
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#12121a" />
+  <rect width="100%" height="100%" fill="url(#grid)" opacity="0.7"/>
+
+  <!-- ==================== HEADER ==================== -->
+  <g id="header-section" transform="translate(0, 0)">
+    <!-- Header Container -->
+    <rect x="40" y="20" width="1120" height="70" rx="8" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+    <!-- Logo -->
+    <rect x="70" y="40" width="150" height="30" rx="4" fill="#2d2d42" stroke="#5d5d7e" stroke-width="1.5" />
+    <text x="145" y="60" fill="#a0a0c0" font-size="14" font-weight="600" text-anchor="middle">AeroLux Logo</text>
+    
+    <!-- Navigation Links -->
+    <g transform="translate(420, 0)">
+      <text x="0" y="60" fill="#00e676" font-size="14" font-weight="600">Home</text>
+      <line x1="0" y1="68" x2="38" y2="68" stroke="#00e676" stroke-width="2" />
+      
+      <text x="80" y="60" fill="#a0a0c0" font-size="14">Fleet</text>
+      <text x="160" y="60" fill="#a0a0c0" font-size="14">Technology</text>
+      <text x="270" y="60" fill="#a0a0c0" font-size="14">Safety</text>
+      <text x="350" y="60" fill="#a0a0c0" font-size="14">Company</text>
+    </g>
+
+    <!-- Header CTA Button -->
+    <rect x="980" y="35" width="150" height="40" rx="20" fill="#00e676" opacity="0.15" stroke="#00e676" stroke-width="2" />
+    <text x="1055" y="60" fill="#00e676" font-size="14" font-weight="bold" text-anchor="middle">Book Flight</text>
+  </g>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <g id="hero-section" transform="translate(0, 110)">
+    <!-- Hero Image Placeholder (Large box with X) -->
+    <rect x="40" y="20" width="1120" height="500" rx="12" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+    <path d="M 40 20 L 1160 520 M 1160 20 L 40 520" stroke="#2d2d42" stroke-width="1.5" opacity="0.4" />
+    
+    <!-- Dark overlay text area -->
+    <rect x="80" y="100" width="500" height="340" rx="8" fill="#12121a" opacity="0.85" stroke="#3d3d5c" stroke-width="1" />
+    
+    <!-- Hero Headline -->
+    <text x="110" y="160" fill="#ffffff" font-size="36" font-weight="bold">Elevate Your</text>
+    <text x="110" y="210" fill="#00e676" font-size="36" font-weight="bold">Daily Commute</text>
+    
+    <!-- Hero Paragraph Lines -->
+    <rect x="110" y="250" width="440" height="8" rx="4" fill="#4d4d6e" />
+    <rect x="110" y="270" width="400" height="8" rx="4" fill="#4d4d6e" />
+    <rect x="110" y="290" width="420" height="8" rx="4" fill="#4d4d6e" />
+    
+    <!-- CTA Buttons -->
+    <rect x="110" y="340" width="180" height="50" rx="25" fill="#00e676" />
+    <text x="200" y="372" fill="#12121a" font-size="16" font-weight="bold" text-anchor="middle">Reserve Now</text>
+    
+    <rect x="310" y="340" width="180" height="50" rx="25" fill="none" stroke="#a0a0c0" stroke-width="2" />
+    <text x="400" y="372" fill="#ffffff" font-size="16" font-weight="bold" text-anchor="middle">Explore Fleet</text>
+
+    <!-- Scroll Indicator -->
+    <circle cx="600" cy="480" r="15" fill="none" stroke="#a0a0c0" stroke-width="1.5" />
+    <path d="M 595 477 L 600 483 L 605 477" fill="none" stroke="#00e676" stroke-width="2" />
+  </g>
+
+  <!-- ==================== FEATURE BENEFITS (3 COLUMN GRID) ==================== -->
+  <g id="features-section" transform="translate(0, 650)">
+    <!-- Section Title -->
+    <text x="600" y="50" fill="#ffffff" font-size="28" font-weight="bold" text-anchor="middle">Why Choose AeroLux?</text>
+    <rect x="560" y="65" width="80" height="4" rx="2" fill="#00e676" />
+    
+    <!-- Feature Column 1 -->
+    <g transform="translate(40, 100)">
+      <rect x="0" y="0" width="346" height="260" rx="8" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+      <circle cx="60" cy="60" r="30" fill="#2d2d42" stroke="#00e676" stroke-width="2" />
+      <!-- Icon Placeholder -->
+      <path d="M 50 60 L 70 60 M 60 50 L 60 70" stroke="#00e676" stroke-width="2" />
+      
+      <text x="40" y="130" fill="#ffffff" font-size="20" font-weight="bold">Zero Emissions</text>
+      <rect x="40" y="160" width="266" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="175" width="240" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="190" width="250" height="6" rx="3" fill="#4d4d6e" />
+    </g>
+
+    <!-- Feature Column 2 -->
+    <g transform="translate(427, 100)">
+      <rect x="0" y="0" width="346" height="260" rx="8" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+      <circle cx="60" cy="60" r="30" fill="#2d2d42" stroke="#00e676" stroke-width="2" />
+      <!-- Icon Placeholder -->
+      <path d="M 50 60 L 70 60 M 60 50 L 60 70" stroke="#00e676" stroke-width="2" />
+      
+      <text x="40" y="130" fill="#ffffff" font-size="20" font-weight="bold">Time Efficiency</text>
+      <rect x="40" y="160" width="266" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="175" width="240" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="190" width="250" height="6" rx="3" fill="#4d4d6e" />
+    </g>
+
+    <!-- Feature Column 3 -->
+    <g transform="translate(814, 100)">
+      <rect x="0" y="0" width="346" height="260" rx="8" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+      <circle cx="60" cy="60" r="30" fill="#2d2d42" stroke="#00e676" stroke-width="2" />
+      <!-- Icon Placeholder -->
+      <path d="M 50 60 L 70 60 M 60 50 L 60 70" stroke="#00e676" stroke-width="2" />
+      
+      <text x="40" y="130" fill="#ffffff" font-size="20" font-weight="bold">Luxury Comfort</text>
+      <rect x="40" y="160" width="266" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="175" width="240" height="6" rx="3" fill="#4d4d6e" />
+      <rect x="40" y="190" width="250" height="6" rx="3" fill="#4d4d6e" />
+    </g>
+  </g>
+
+  <!-- ==================== DYNAMIC MAP / FLIGHT PATHS ==================== -->
+  <g id="map-section" transform="translate(0, 1050)">
+    <!-- Map Canvas Container -->
+    <rect x="40" y="0" width="1120" height="350" rx="12" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="2" />
+    <path d="M 40 0 L 1160 350 M 1160 0 L 40 350" stroke="#2d2d42" stroke-width="1.5" opacity="0.2" />
+    
+    <!-- Abstract city map node design -->
+    <circle cx="200" cy="100" r="8" fill="#00e676" />
+    <circle cx="500" cy="80" r="8" fill="#00e676" />
+    <circle cx="800" cy="220" r="8" fill="#00e676" />
+    <circle cx="1000" cy="120" r="8" fill="#00e676" />
+    <circle cx="450" cy="280" r="8" fill="#00e676" />
+
+    <!-- Dotted Flight Lines -->
+    <path d="M 200 100 Q 350 50 500 80" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="6,6" />
+    <path d="M 500 80 Q 650 150 800 220" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="6,6" />
+    <path d="M 800 220 Q 900 170 1000 120" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="6,6" />
+    <path d="M 450 280 Q 325 190 200 100" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="6,6" />
+    <path d="M 450 280 Q 625 250 800 220" fill="none" stroke="#00e676" stroke-width="2" stroke-dasharray="6,6" />
+
+    <!-- Overlay Interactive Panel (Route Selector) -->
+    <rect x="80" y="40" width="300" height="270" rx="8" fill="#12121a" opacity="0.9" stroke="#3d3d5c" stroke-width="1.5" />
+    <text x="110" y="80" fill="#ffffff" font-size="18" font-weight="bold">Regional Network</text>
+    
+    <text x="110" y="130" fill="#a0a0c0" font-size="12">Origin Station</text>
+    <rect x="110" y="140" width="240" height="35" rx="4" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="1" />
+    <text x="125" y="162" fill="#ffffff" font-size="13">Downtown Skyport (A01)</text>
+
+    <text x="110" y="200" fill="#a0a0c0" font-size="12">Destination Station</text>
+    <rect x="110" y="210" width="240" height="35" rx="4" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="1" />
+    <text x="125" y="232" fill="#ffffff" font-size="13">International Hub (E04)</text>
+
+    <rect x="110" y="260" width="240" height="35" rx="17.5" fill="#00e676" />
+    <text x="230" y="282" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">Find Available Flights</text>
+  </g>
+
+  <!-- ==================== FOOTER ==================== -->
+  <g id="footer-section" transform="translate(0, 1440)">
+    <!-- Footer line separator -->
+    <line x1="40" y1="0" x2="1160" y2="0" stroke="#2d2d3d" stroke-width="2" />
+    
+    <!-- Footer Links Column 1 -->
+    <g transform="translate(60, 40)">
+      <rect x="0" y="0" width="120" height="24" rx="4" fill="#2d2d42" />
+      <text x="10" y="16" fill="#00e676" font-size="12" font-weight="bold">AEROLUX</text>
+      
+      <text x="0" y="60" fill="#a0a0c0" font-size="12">© 2026 AeroLux Inc.</text>
+      <text x="0" y="80" fill="#a0a0c0" font-size="12">All rights reserved.</text>
+    </g>
+
+    <!-- Footer Links Column 2 -->
+    <g transform="translate(300, 40)">
+      <text x="0" y="20" fill="#ffffff" font-size="14" font-weight="bold">Company</text>
+      <text x="0" y="50" fill="#a0a0c0" font-size="12">About Us</text>
+      <text x="0" y="70" fill="#a0a0c0" font-size="12">Careers</text>
+      <text x="0" y="90" fill="#a0a0c0" font-size="12">Press Kit</text>
+    </g>
+
+    <!-- Footer Links Column 3 -->
+    <g transform="translate(500, 40)">
+      <text x="0" y="20" fill="#ffffff" font-size="14" font-weight="bold">Technology</text>
+      <text x="0" y="50" fill="#a0a0c0" font-size="12">eVTOL Aircraft</text>
+      <text x="0" y="70" fill="#a0a0c0" font-size="12">Safety Systems</text>
+      <text x="0" y="90" fill="#a0a0c0" font-size="12">Sustainability</text>
+    </g>
+
+    <!-- Footer Links Column 4 (Newsletter) -->
+    <g transform="translate(750, 40)">
+      <text x="0" y="20" fill="#ffffff" font-size="14" font-weight="bold">Stay Updated</text>
+      <rect x="0" y="40" width="240" height="35" rx="4" fill="#1e1e2d" stroke="#3d3d5c" stroke-width="1" />
+      <text x="15" y="62" fill="#4d4d6e" font-size="12">Enter email address...</text>
+      
+      <rect x="250" y="40" width="100" height="35" rx="4" fill="#00e676" />
+      <text x="300" y="62" fill="#12121a" font-size="12" font-weight="bold" text-anchor="middle">Subscribe</text>
+    </g>
+  </g>
+
+  <!-- ==================== ANNOTATION NODE MARKERS (1 to 6) ==================== -->
+  <g id="annotation-markers">
+    <!-- 1. Navigation Bar -->
+    <circle cx="1135" cy="50" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="1135" y="55" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">1</text>
+    
+    <!-- 2. Hero Header CTA -->
+    <circle cx="585" cy="180" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="585" y="185" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">2</text>
+    
+    <!-- 3. Primary Hero CTA Action -->
+    <circle cx="285" cy="450" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="285" y="455" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">3</text>
+
+    <!-- 4. Benefit Column Grid -->
+    <circle cx="410" cy="740" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="410" y="745" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">4</text>
+
+    <!-- 5. Interactive Route Selector Map -->
+    <circle cx="40" cy="1080" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="40" y="1085" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">5</text>
+
+    <!-- 6. Bottom Newsletter Footer Area -->
+    <circle cx="1115" cy="1470" r="14" fill="#00e676" stroke="#ffffff" stroke-width="2" />
+    <text x="1115" y="1475" fill="#12121a" font-size="14" font-weight="bold" text-anchor="middle">6</text>
+  </g>
+</svg>

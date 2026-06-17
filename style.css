@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-main: #0a0a0f;
+  --bg-card: rgba(18, 18, 26, 0.7);
+  --bg-sidebar: #12121a;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --primary: #00e676;
+  --primary-glow: rgba(0, 230, 118, 0.2);
+  --text-main: #ffffff;
+  --text-muted: #8f92a1;
+  --text-contrast: #0f172a;
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-main: #f8f9fa;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-sidebar: #ffffff;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --primary: #00b050;
+  --primary-glow: rgba(0, 176, 80, 0.15);
+  --text-main: #1e1e2d;
+  --text-muted: #6c757d;
+  --text-contrast: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sidebar */
+aside {
+  width: 400px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 10;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.brand-badge {
+  display: inline-block;
+  background: var(--primary-glow);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0, 230, 118, 0.3);
+}
+
+.sidebar-header h1 {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sidebar-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* Annotations Scroll Area */
+.annotations-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.annotation-group {
+  display: none;
+}
+
+.annotation-group.active {
+  display: block;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.annotation-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.annotation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+  opacity: 0.7;
+}
+
+.annotation-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.annotation-num {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: var(--text-contrast);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.annotation-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding-right: 30px;
+}
+
+.annotation-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.rationale-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Main Canvas Area */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.toolbar {
+  height: 80px;
+  background-color: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 5;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.tab-switchers {
+  display: flex;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: var(--text-contrast);
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+}
+
+.control-btn.active {
+  background: var(--primary-glow);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Canvas Viewport */
+.canvas-container {
+  flex: 1;
+  overflow: auto;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: radial-gradient(circle at center, var(--bg-main) 0%, #050508 100%);
+}
+
+.wireframe-wrapper {
+  background: var(--bg-sidebar);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.wireframe-wrapper.show-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 4.16%, rgba(0, 230, 118, 0.05) 4.16%, rgba(0, 230, 118, 0.05) 8.33%, 
+    transparent 8.33%, transparent 12.5%, rgba(0, 230, 118, 0.05) 12.5%, rgba(0, 230, 118, 0.05) 16.66%, 
+    transparent 16.66%, transparent 20.83%, rgba(0, 230, 118, 0.05) 20.83%, rgba(0, 230, 118, 0.05) 25%, 
+    transparent 25%, transparent 29.16%, rgba(0, 230, 118, 0.05) 29.16%, rgba(0, 230, 118, 0.05) 33.33%, 
+    transparent 33.33%, transparent 37.5%, rgba(0, 230, 118, 0.05) 37.5%, rgba(0, 230, 118, 0.05) 41.66%, 
+    transparent 41.66%, transparent 45.83%, rgba(0, 230, 118, 0.05) 45.83%, rgba(0, 230, 118, 0.05) 50%, 
+    transparent 50%, transparent 54.16%, rgba(0, 230, 118, 0.05) 54.16%, rgba(0, 230, 118, 0.05) 58.33%, 
+    transparent 58.33%, transparent 62.5%, rgba(0, 230, 118, 0.05) 62.5%, rgba(0, 230, 118, 0.05) 66.66%, 
+    transparent 66.66%, transparent 70.83%, rgba(0, 230, 118, 0.05) 70.83%, rgba(0, 230, 118, 0.05) 75%, 
+    transparent 75%, transparent 79.16%, rgba(0, 230, 118, 0.05) 79.16%, rgba(0, 230, 118, 0.05) 83.33%, 
+    transparent 83.33%, transparent 87.5%, rgba(0, 230, 118, 0.05) 87.5%, rgba(0, 230, 118, 0.05) 91.66%, 
+    transparent 91.66%, transparent 95.83%, rgba(0, 230, 118, 0.05) 95.83%, rgba(0, 230, 118, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 16px;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
